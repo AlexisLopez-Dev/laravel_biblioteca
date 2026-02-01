@@ -44,7 +44,7 @@ Este proyecto es un CRUD completo que permite gestionar una biblioteca personal 
 
 <div align="center">
   <h3>Detalle de libro</h3>
-    <img src="https://github.com/user-attachments/assets/d6a6ce14-b2ca-4eb0-8f69-b22e0996b52f" width="80%">
+    <img src="https://github.com/user-attachments/assets/d6a6ce14-b2ca-4eb0-8f69-b22e0996b52f" width="100%">
   
   <p><em>Formulario de edición que mantiene los datos previos y las casillas marcadas.</em></p>
 </div>
