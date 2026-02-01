@@ -16,7 +16,19 @@ class LibroController extends Controller {
         }
 
         if($request->genero && $request->genero!=='todos'){
-            $query->where('genero', 'LIKE', '%' . $request->genero . '%');
+            $query->where('genero', '=',  $request->genero);
+        }
+
+        if($request->estado && $request->estado!=='todos'){
+            $query->where('estado_lectura', '=', $request->estado);
+        }
+
+        if($request->formato && $request->formato!=='todos'){
+            $query->where('formato', '=', $request->formato);
+        }
+
+        if($request->has('favorito')){
+            $query->where('favorito', '=', 1);
         }
 
         $libros = $query->get();
