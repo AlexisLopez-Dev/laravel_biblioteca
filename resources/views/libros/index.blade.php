@@ -1,12 +1,6 @@
 @extends('layout')
 @section('content')
     <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-center mb-8">
-            <h1 class="text-4xl font-black text-gray-800">📚 Mi biblioteca</h1>
-            <a href="{{route('libros.create')}}" class="bg-black text-white px-6 py-3 rounded-xl font-bold hover:bg-gray-800 transition">
-                + Añadir libro
-            </a>
-        </div>
 
         <div class="bg-gray-100 p-6 rounded-2xl mb-8 border border-gray-200">
             <form action="{{route('libros.index')}}" method="get" class="flex flex-wrap gap-4 items-end">
