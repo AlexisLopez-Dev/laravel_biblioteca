@@ -41,6 +41,18 @@ class LibroController extends Controller {
     }
 
     public function store(Request $request){
+
+        $request->validate([
+           'titulo' => 'required',
+            'autor' => 'required',
+            'portada' => 'required',
+            'genero' => 'required',
+            'anyo_publicacion' => 'required|integer',
+            'formato' => 'required',
+            'estado_lectura' => 'required',
+            'puntuacion' => 'required|integer|min:1|max:10',
+        ]);
+
         $libro = new Libro();
         $libro->titulo = $request->titulo;
         $libro->autor = $request->autor;
@@ -72,6 +84,18 @@ class LibroController extends Controller {
     }
 
     public function update($id, Request $request){
+
+        $request->validate([
+            'titulo' => 'required',
+            'autor' => 'required',
+            'portada' => 'required',
+            'genero' => 'required',
+            'anyo_publicacion' => 'required|integer',
+            'formato' => 'required',
+            'estado_lectura' => 'required',
+            'puntuacion' => 'required|integer|min:1|max:10',
+        ]);
+
         $libro = Libro::find($id);
 
         $libro->titulo = $request->titulo;
