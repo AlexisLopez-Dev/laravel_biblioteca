@@ -12,3 +12,5 @@ Route::delete('/destroy/{id}', [LibroController::class, 'destroy'])->name('libro
 
 Route::get('/edit/{id}', [LibroController::class, 'edit'])->name('libros.edit');
 Route::put('/update/{id}', [LibroController::class, 'update'])->name('libros.update');
+
+Route::get('/show/{id}', [LibroController::class, 'show'])->name('libros.show');

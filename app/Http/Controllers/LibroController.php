@@ -91,4 +91,9 @@ class LibroController extends Controller {
         return back()->with('mensaje', '¡Libro editado!');
     }
 
+    public function show($id) {
+        $libro = Libro::find($id);
+        return view('libros.show', compact('libro'));
+    }
+
 }
