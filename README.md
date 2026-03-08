@@ -40,12 +40,10 @@ Este proyecto es un CRUD completo que permite gestionar una biblioteca personal 
 |  Edición de libro | Formulario de Creación |
 |:---:|:---:|
 | <img src="https://github.com/user-attachments/assets/d6811220-da3d-4f69-aed7-4a76ac7a9df2" width="100%"> | <img src="https://github.com/user-attachments/assets/546c7faf-d239-4dc5-9fb9-65ceb53fa35a" width="100%"> |
-| **Ficha técnica con diseño asimétrico** | **Validación y UX limpia** |
 
 <div align="center">
   <h3>Detalle de libro</h3>
     <img src="https://github.com/user-attachments/assets/d6a6ce14-b2ca-4eb0-8f69-b22e0996b52f" width="100%">
   
-  <p><em>Formulario de edición que mantiene los datos previos y las casillas marcadas.</em></p>
 </div>
 
