@@ -19,6 +19,4 @@ Route::put('/update/{id}', [LibroController::class, 'update'])->name('libros.upd
 
 Route::get('/show/{id}', [LibroController::class, 'show'])->name('libros.show');
 
-
-// Comprobación con resource
-// Route::resource('libros', LibroController::class);
+Route::patch('/libros/{id}/favorito', [LibroController::class, 'toggleFavorito'])->name('libros.toggleFav');

@@ -50,8 +50,8 @@
 
                 <div class="pb-3 px-2">
                     <label class="font-bold cursor-pointer flex items-center gap-2 select-none">
-                        <input type="checkbox" name="favorito" value="1" {{ request('favorito') ? 'checked' : '' }} class="w-5 h-5 accent-red-500">
-                        Solo Favoritos ❤️
+                        <input type="checkbox" name="favorito" value="1" {{ request('favorito') ? 'checked' : '' }} class="w-5 h-5 accent-yellow-500">
+                        Solo Favoritos ⭐
                     </label>
                 </div>
 
@@ -64,13 +64,22 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($libros as $libro)
-                <div class="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+                <div class="group bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
 
                     <div class="h-48 bg-gray-200 overflow-hidden relative">
                         <img src="{{$libro->portada}}" alt="Portada" class="w-full h-full object-cover">
-                        @if($libro->favorito)
-                            <span class="absolute top-2 right-2 bg-white/90 backdrop-blur text-xl p-1 rounded-full shadow">❤️</span>
-                        @endif
+
+                        <div class="absolute top-2 right-2 z-10">
+                            <form action="{{ route('libros.toggleFav', $libro->id) }}" method="POST">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit"
+                                        title="{{ $libro->favorito ? 'Quitar de favoritos' : 'Añadir a favoritos' }}"
+                                        class="bg-white/90 backdrop-blur text-xl p-1.5 rounded-full shadow hover:scale-110 transition-all duration-300 {{ $libro->favorito ? 'opacity-100' : 'opacity-0 group-hover:opacity-100' }}">
+                                    <span class="{{ $libro->favorito ? '' : 'grayscale opacity-50 inline-block' }}">⭐</span>
+                                </button>
+                            </form>
+                        </div>
                     </div>
 
                     <div class="p-5 flex-1">

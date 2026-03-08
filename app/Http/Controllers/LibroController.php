@@ -101,4 +101,13 @@ class LibroController extends Controller {
 
         return redirect()->route('libros.index');
     }
+
+    public function toggleFavorito($id) {
+        $libro = Libro::find($id);
+        $libro->favorito = !$libro->favorito;
+        $libro->save();
+
+        return back();
+    }
+
 }
