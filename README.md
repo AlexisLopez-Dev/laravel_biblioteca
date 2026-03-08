@@ -1,5 +1,5 @@
 <div align="center">
-  <h1 align="center">📚 Mi Biblioteca Personal</h1>
+  <h1 align="center">📚 MiBiblioteca</h1>
   
   <p align="center">
     Una aplicación web moderna para gestionar tu colección de libros, construida con <strong>Laravel</strong> y estilizada con <strong>Tailwind CSS</strong>.
@@ -8,7 +8,6 @@
   <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel" />
   <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
 </div>
 
 <br>
@@ -19,19 +18,15 @@
 
 ---
 
-## ✨ Características Principales
+## Características Principales
 
-Este proyecto es un CRUD completo que permite gestionar una biblioteca personal con las siguientes funcionalidades:
+Este proyecto es un CRUD completo diseñado con un fuerte enfoque en la experiencia de usuario (UX) y buenas prácticas en el lado del servidor.
 
-- 📋 **Listado Visual:** Vista en cuadrícula (Grid) con tarjetas modernas.
-- 🔍 **Buscador y Filtros:** Búsqueda por texto y filtrado simultáneo por:
-  - Género (Novela, Ensayo, Fantasía...).
-  - Estado de lectura (🟢 Leído, 🟡 Leyendo, ⚪ Pendiente...).
-  - Formato (Físico, Ebook, PDF).
-  - ❤️ Favoritos.
-- 🎨 **Interfaz UI/UX:** Diseño responsive y limpio con feedback visual (colores dinámicos según el estado).
-- 🛡️ **Validaciones:** Control de errores en formularios tanto en cliente como en servidor.
-- 🤝 **Gestión de Préstamos:** Control de libros prestados a amigos con fecha de préstamo.
+- **Interfaz UI/UX Responsiva:** Sistema de tarjetas en cuadrícula (Grid) y feedback visual dinámico construido íntegramente con **Tailwind CSS**.
+- **Búsqueda Avanzada:** Lógica de base de datos optimizada para permitir búsquedas por texto y filtrado múltiple simultáneo (género, estado de lectura, formato, favoritos).
+- **Interacción Dinámica:** Sistema de "Favoritos" integrado directamente en la vista principal.
+- **Validación de Datos:** Control estricto de formularios en el servidor (Request Validation) con persistencia de estado (old input) para no perder datos.
+- **Control de Préstamos:** Registro de libros prestados con asignación de fechas.
 
 ---
 
@@ -47,3 +42,36 @@ Este proyecto es un CRUD completo que permite gestionar una biblioteca personal 
   
 </div>
 
+## Instalación y Despliegue Local
+
+Sigue estos pasos para levantar el proyecto en tu propia máquina usando la base de datos SQLite (viene configurada por defecto):
+
+**1. Clona el repositorio**
+```bash
+git clone https://github.com/AlexisLopez-Dev/laravel_biblioteca.git
+cd laravel_biblioteca
+```
+
+**2. Instala las dependencias (PHP y Node.js)**
+```bash
+composer install
+npm install
+npm run build
+```
+
+**3. Configura el entorno**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+**4. Ejecuta las migraciones de Base de Datos**
+```bash
+php artisan migrate
+```
+
+**5. Inicia el servidor de desarrollo**
+```bash
+php artisan serve
+```
+El proyecto estará disponible en http://localhost:8000.
