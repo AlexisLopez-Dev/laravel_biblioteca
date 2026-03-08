@@ -3,7 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LibroController;
 
-Route::get('/', [LibroController::class, 'index'])->name('libros.index');
+Route::get('/', function () {
+    return view('layout');
+});
+
+Route::get('/index', [LibroController::class, 'index'])->name('libros.index');
 
 Route::get('/create', [LibroController::class, 'create'])->name('libros.create');
 Route::post('/store', [LibroController::class, 'store'])->name('libros.store');
@@ -14,3 +18,7 @@ Route::get('/edit/{id}', [LibroController::class, 'edit'])->name('libros.edit');
 Route::put('/update/{id}', [LibroController::class, 'update'])->name('libros.update');
 
 Route::get('/show/{id}', [LibroController::class, 'show'])->name('libros.show');
+
+
+// Comprobación con resource
+// Route::resource('libros', LibroController::class);
